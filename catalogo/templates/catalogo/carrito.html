@@ -1,0 +1,52 @@
+{% extends "catalogo/base.html" %}
+{% load catalogo_tags %}
+{% block titulo %}Carrito de compra{% endblock %}
+{% block contenido %}
+<div class="carrito-page">
+    <div class="catalogo-header-page">
+        <div>
+            <span class="kicker">Tu compra</span>
+            <h1>Carrito de compra</h1>
+        </div>
+        <a class="btn btn-secondary" href="{% url 'catalogo:catalogo' %}">Seguir comprando</a>
+    </div>
+
+    {% if items %}
+        <div class="carrito-lista">
+            {% for item in items %}
+            <article class="carrito-item">
+                <img src="{{ item.producto.imagen }}" alt="{{ item.producto.nombre }}" class="carrito-imagen">
+                <div class="carrito-item-info">
+                    <span class="detalle-categoria">{{ item.producto.categoria }}</span>
+                    <h2>{{ item.producto.nombre }}</h2>
+                    <p>{{ item.cantidad }} unidad{{ item.cantidad|pluralize }} x ${{ item.producto.precio|precio }}</p>
+                </div>
+                <strong class="carrito-subtotal">${{ item.subtotal|precio }}</strong>
+                <a href="{% url 'catalogo:quitar_carrito' item.producto.id %}" class="quitar-link">Quitar</a>
+            </article>
+            {% endfor %}
+        </div>
+
+        <aside class="carrito-resumen">
+            <span>Total de la compra</span>
+            <strong>${{ total|precio }}</strong>
+            {% if user.is_authenticated and not user.is_staff %}
+                <form method="post" action="{% url 'catalogo:confirmar_carrito' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary">Confirmar compra</button>
+                </form>
+            {% elif user.is_staff %}
+                <p class="admin-note">Los administradores no pueden comprar.</p>
+            {% else %}
+                <a class="btn btn-primary" href="{% url 'catalogo:login' %}">Inicia sesión para comprar</a>
+            {% endif %}
+        </aside>
+    {% else %}
+        <div class="carrito-vacio">
+            <h2>Tu carrito está vacío</h2>
+            <p>Agrega productos desde el catálogo para comenzar tu compra.</p>
+            <a class="btn btn-primary" href="{% url 'catalogo:catalogo' %}">Explorar catálogo</a>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends "catalogo/base.html" %}
+{% load catalogo_tags %}
+{% block titulo %}Catálogo completo{% endblock %}
+{% block contenido %}
+<div class="catalogo-page">
+
+    {% if query %}
+    <p class="resultados-busqueda">Resultados para: <strong>{{ query }}</strong></p>
+    {% endif %}
+
+    <form class="catalogo-filtros" method="get">
+        <input type="hidden" name="q" value="{{ query }}">
+        <label>
+            Categoría
+            <select name="categoria">
+                <option value="">Todas las categorías</option>
+                {% for categoria_opcion in categorias %}
+                    <option value="{{ categoria_opcion }}" {% if categoria == categoria_opcion %}selected{% endif %}>{{ categoria_opcion }}</option>
+                {% endfor %}
+            </select>
+        </label>
+        <label>
+            Precio mínimo
+            <input type="number" name="precio_minimo" min="0" value="{{ precio_minimo }}" placeholder="$0">
+        </label>
+        <label>
+            Precio máximo
+            <input type="number" name="precio_maximo" min="0" value="{{ precio_maximo }}" placeholder="Sin límite">
+        </label>
+        <label>
+            Ordenar por
+            <select name="orden">
+                <option value="">Recomendados</option>
+                <option value="precio_asc" {% if orden == "precio_asc" %}selected{% endif %}>Precio: menor a mayor</option>
+                <option value="precio_desc" {% if orden == "precio_desc" %}selected{% endif %}>Precio: mayor a menor</option>
+                <option value="nombre" {% if orden == "nombre" %}selected{% endif %}>Nombre: A-Z</option>
+            </select>
+        </label>
+        <button class="btn btn-primary filtro-boton" type="submit">Filtrar</button>
+        <a class="limpiar-filtros" href="{% url 'catalogo:catalogo' %}">Limpiar</a>
+    </form>
+
+    <div class="catalog-grid catalog-grid--full">
+        {% for producto in productos %}
+        <article class="producto-card {% if producto.stock == 0 %}producto-card--sin-stock{% endif %}">
+            <img class="producto-imagen" src="{{ producto.imagen }}" alt="{{ producto.nombre }}">
+            <div class="producto-badge">
+                {% if producto.stock == 0 %}
+                    Sin stock
+                {% elif producto.stock < 10 %}
+                    Últimas unidades
+                {% else %}
+                    En stock
+                {% endif %}
+            </div>
+            <h3>{{ producto.nombre }}</h3>
+            <p class="categoria">{{ producto.categoria }}</p>
+            <p class="precio">${{ producto.precio|precio }}</p>
+            <div class="stock-row">
+                {% if producto.stock == 0 %}
+                    <span class="stock stock--red">Sin stock</span>
+                {% else %}
+                    <span class="stock">{{ producto.stock }} disponibles</span>
+                {% endif %}
+            </div>
+            <div class="producto-card-actions">
+                <a class="ver-link" href="{% url 'catalogo:detalle' producto.id %}">Ver detalle</a>
+                <form method="post" action="{% url 'catalogo:agregar_carrito' producto.id %}">
+                    {% csrf_token %}
+                    <button class="btn btn-primary btn-cart" type="submit" {% if producto.stock == 0 %}disabled{% endif %}>
+                        {% if producto.stock == 0 %}Agotado{% else %}Añadir al carro{% endif %}
+                    </button>
+                </form>
+            </div>
+        </article>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

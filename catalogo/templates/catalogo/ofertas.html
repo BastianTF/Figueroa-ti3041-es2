@@ -1,0 +1,49 @@
+{% extends "catalogo/base.html" %}
+{% load catalogo_tags %}
+{% block titulo %}Ofertas | Ferretería El Tornillo{% endblock %}
+{% block contenido %}
+<div class="catalogo-page ofertas-page">
+    <div class="catalogo-header-page">
+        <div>
+            <span class="kicker">Precios especiales</span>
+            <h1>Ofertas</h1>
+            <p class="ofertas-intro">Aprovecha descuentos en herramientas seleccionadas por tiempo limitado.</p>
+        </div>
+        <a class="btn btn-secondary" href="{% url 'catalogo:catalogo' %}">Ver catálogo</a>
+    </div>
+
+    <div class="catalog-grid catalog-grid--full">
+        {% for producto in productos %}
+        <article class="producto-card oferta-card {% if producto.stock == 0 %}producto-card--sin-stock{% endif %}">
+            <div class="oferta-ribbon">-{{ producto.descuento }}%</div>
+            <img class="producto-imagen" src="{{ producto.imagen }}" alt="{{ producto.nombre }}">
+            <div class="producto-badge producto-badge--oferta">Oferta</div>
+            <h3>{{ producto.nombre }}</h3>
+            <p class="categoria">{{ producto.categoria }}</p>
+            <div class="oferta-precios">
+                <span class="oferta-precio-anterior">${{ producto.precio|precio }}</span>
+                <strong>${{ producto.precio_oferta|precio }}</strong>
+            </div>
+            <div class="stock-row">
+                {% if producto.stock == 0 %}
+                    <span class="stock stock--red">Sin stock</span>
+                {% else %}
+                    <span class="stock">{{ producto.stock }} disponibles</span>
+                {% endif %}
+            </div>
+            <div class="producto-card-actions">
+                <a class="ver-link" href="{% url 'catalogo:detalle' producto.id %}">Ver detalle</a>
+                <form method="post" action="{% url 'catalogo:agregar_carrito' producto.id %}">
+                    {% csrf_token %}
+                    <button class="btn btn-primary btn-cart" type="submit" {% if producto.stock == 0 %}disabled{% endif %}>
+                        {% if producto.stock == 0 %}Agotado{% else %}Añadir al carro{% endif %}
+                    </button>
+                </form>
+            </div>
+        </article>
+        {% empty %}
+            <p>No hay ofertas disponibles por el momento.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

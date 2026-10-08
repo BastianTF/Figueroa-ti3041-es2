@@ -1,0 +1,49 @@
+{% extends "catalogo/base.html" %}
+{% load catalogo_tags %}
+{% block titulo %}{{ producto.nombre }}{% endblock %}
+{% block contenido %}
+<div class="detalle-page">
+    <a href="{% url 'catalogo:catalogo' %}" class="btn btn-secondary">&larr; Volver al catálogo</a>
+
+    <div class="detalle-card">
+        <div class="detalle-imagen-wrap">
+            <img src="{{ producto.imagen }}" alt="{{ producto.nombre }}" class="detalle-imagen">
+        </div>
+
+        <div class="detalle-info">
+            <span class="detalle-categoria">{{ producto.categoria }}</span>
+            <h1>{{ producto.nombre }}</h1>
+            <p class="detalle-precio">${{ producto.precio|precio }}</p>
+            <p class="detalle-stock">
+                {% if producto.stock > 0 %}
+                    Stock disponible: {{ producto.stock }} unidades
+                {% else %}
+                    Sin stock
+                {% endif %}
+            </p>
+
+            <section class="caracteristicas">
+                <h2>Características del producto</h2>
+                <ul>
+                    {% for caracteristica in producto.caracteristicas %}
+                        <li>{{ caracteristica }}</li>
+                    {% endfor %}
+                </ul>
+            </section>
+
+            {% if user.is_authenticated and not user.is_staff %}
+                <form method="post" action="{% url 'catalogo:agregar_carrito' producto.id %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary" {% if producto.stock == 0 %}disabled{% endif %}>
+                        {% if producto.stock == 0 %}Sin stock{% else %}Agregar al carrito{% endif %}
+                    </button>
+                </form>
+            {% elif not user.is_authenticated %}
+                <a class="btn btn-primary" href="{% url 'catalogo:login' %}">Inicia sesión para comprar</a>
+            {% elif user.is_authenticated and user.is_staff %}
+                <p class="admin-note">Los administradores no pueden comprar desde esta vista.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block titulo %}Ferretería El Tornillo{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'catalogo/estilos.css' %}?v=tema-rojo-1">
+</head>
+<body>
+    <header class="market-header">
+        <div class="top-bar">
+            <div class="brand-wrap">
+                <span class="brand-icon">🔧</span>
+                <a href="{% url 'catalogo:lista' %}" class="brand-name">Ferretería El Tornillo</a>
+            </div>
+
+            <form class="search-box" method="get" action="{% url 'catalogo:catalogo' %}">
+                <span class="search-icon">⌕</span>
+                <input type="search" name="q" value="{{ request.GET.q|default:'' }}" placeholder="Buscar producto" aria-label="Buscar producto">
+            </form>
+
+            <div class="account-actions">
+                <a href="{% url 'catalogo:carrito' %}" class="cart-link">
+                    🛒 Carrito
+                    {% if cantidad_carrito %}<span class="cart-badge">{{ cantidad_carrito }}</span>{% endif %}
+                </a>
+                {% if user.is_authenticated %}
+                    <span class="user-greeting">Hola, {{ user.username }}</span>
+                    {% if user.is_staff %}
+                        <span class="user-role">Admin</span>
+                        <a href="{% url 'catalogo:admin_panel' %}" class="login-link">Administrar</a>
+                    {% endif %}
+                    <a href="{% url 'catalogo:logout' %}" class="login-link">Cerrar sesión</a>
+                {% else %}
+                    <a href="{% url 'catalogo:login' %}" class="login-link">Iniciar sesión</a>
+                    <a href="{% url 'catalogo:registro' %}" class="register-link">Crear cuenta</a>
+                {% endif %}
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <button class="categories-trigger" type="button" aria-controls="categories-drawer" aria-expanded="false">
+                <span aria-hidden="true">☰</span> Categorías
+            </button>
+            <a href="{% url 'catalogo:ofertas' %}">Ofertas</a>
+            <a href="#">Nuevo en Ferretería</a>
+            <a href="#">Servicios</a>
+        </nav>
+    </header>
+
+    <div class="categories-overlay" data-categories-close></div>
+    <aside class="categories-drawer" id="categories-drawer" aria-hidden="true" aria-label="Categorías de productos">
+        <div class="categories-drawer-header">
+            <span class="categories-menu-icon" aria-hidden="true">☰</span>
+            <strong>Categorías</strong>
+            <button class="categories-close" type="button" aria-label="Cerrar categorías" data-categories-close>×</button>
+        </div>
+        <nav class="categories-list" aria-label="Lista de categorías">
+            {% for categoria_menu in categorias_menu %}
+                <a href="{% url 'catalogo:catalogo' %}?categoria={{ categoria_menu.nombre|urlencode }}" class="category-item">
+                    <span class="category-icon" aria-hidden="true">{{ categoria_menu.icono }}</span>
+                    <span>{{ categoria_menu.nombre }}</span>
+                    <span class="category-arrow" aria-hidden="true">›</span>
+                </a>
+            {% empty %}
+                <a href="{% url 'catalogo:catalogo' %}" class="category-item">Ver catálogo</a>
+            {% endfor %}
+        </nav>
+    </aside>
+
+    {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+            <div class="message message-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <main>
+        {% block contenido %}{% endblock %}
+    </main>
+
+    <script>
+        (() => {
+            const drawer = document.querySelector("#categories-drawer");
+            const trigger = document.querySelector(".categories-trigger");
+            const closeButtons = document.querySelectorAll("[data-categories-close]");
+
+            if (!drawer || !trigger) return;
+
+            const setDrawerState = (isOpen) => {
+                document.body.classList.toggle("categories-open", isOpen);
+                drawer.setAttribute("aria-hidden", String(!isOpen));
+                trigger.setAttribute("aria-expanded", String(isOpen));
+            };
+
+            trigger.addEventListener("click", () => setDrawerState(true));
+            closeButtons.forEach((button) => button.addEventListener("click", () => setDrawerState(false)));
+            document.addEventListener("keydown", (event) => {
+                if (event.key === "Escape") setDrawerState(false);
+            });
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{% extends "catalogo/base.html" %}
+{% block titulo %}{{ modo }} producto{% endblock %}
+{% block contenido %}
+<div class="auth-page">
+    <div class="auth-card admin-form-card">
+        <span class="kicker">Inventario</span>
+        <h1>{{ modo }} producto</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label for="nombre">Nombre</label><input id="nombre" name="nombre" value="{{ producto.nombre|default:'' }}" required>
+            <label for="categoria">Categoría</label><input id="categoria" name="categoria" value="{{ producto.categoria|default:'' }}" required>
+            <label for="precio">Precio</label><input id="precio" name="precio" type="number" min="0" value="{{ producto.precio|default:'0' }}" required>
+            <label for="stock">Stock disponible</label><input id="stock" name="stock" type="number" min="0" value="{{ producto.stock|default:'0' }}" required>
+            <label for="imagen">URL de la imagen</label><input id="imagen" name="imagen" type="url" value="{{ producto.imagen|default:'' }}" placeholder="https://...">
+            <label for="caracteristicas">Características, una por línea</label><textarea id="caracteristicas" name="caracteristicas" rows="5">{% for item in producto.caracteristicas %}{{ item }}{% if not forloop.last %}
+{% endif %}{% endfor %}</textarea>
+            <button type="submit" class="btn btn-primary">Guardar producto</button>
+        </form>
+        <p class="auth-switch"><a href="{% url 'catalogo:admin_productos' %}">Volver al inventario</a></p>
+    </div>
+</div>
+{% endblock %}

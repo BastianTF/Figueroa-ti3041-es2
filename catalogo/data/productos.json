@@ -1,0 +1,602 @@
+[
+  {
+    "id": 1,
+    "nombre": "Martillo carpintero 16 oz",
+    "categoria": "Herramientas manuales",
+    "precio": 7990,
+    "stock": 24,
+    "imagen": "https://www.jupix.cl/cdn/shop/products/D_684282-MLC48645296707_122021-B_1024x.jpg?v=1661228065",
+    "caracteristicas": [
+      "Categoría: Herramientas manuales",
+      "Código de producto: #1",
+      "Producto nuevo y listo para despacho"
+    ],
+    "descuento": null,
+    "precio_oferta": null
+  },
+  {
+    "id": 2,
+    "nombre": "Destornillador plano 1/4\"",
+    "categoria": "Herramientas manuales",
+    "precio": 2490,
+    "stock": 40,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgRTRjmkA0YAzMWQGfZKfHz2oMPUl9IWZXD3MHD5CfO1mcwxagqh-Kscc&s=10",
+    "caracteristicas": [
+      "Categoría: Herramientas manuales",
+      "Código de producto: #2",
+      "Producto nuevo y listo para despacho"
+    ],
+    "descuento": null,
+    "precio_oferta": null
+  },
+  {
+    "id": 3,
+    "nombre": "Destornillador phillips #2",
+    "categoria": "Herramientas manuales",
+    "precio": 2490,
+    "stock": 36,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5QPWkM339VpTQFYcTofTbH7fMK_PC2hK5A2Utwcr8ww&s",
+    "caracteristicas": [
+      "Categoría: Herramientas manuales",
+      "Código de producto: #3",
+      "Producto nuevo y listo para despacho"
+    ],
+    "descuento": null,
+    "precio_oferta": null
+  },
+  {
+    "id": 4,
+    "nombre": "Set de llaves allen 9 piezas",
+    "categoria": "Herramientas manuales",
+    "precio": 5990,
+    "stock": 15,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShdgPoXfAfBnWNTia0R-jzM8-fpZKLWOCPrG-xLhYF3A&s=10",
+    "caracteristicas": [
+      "Categoría: Herramientas manuales",
+      "Código de producto: #4",
+      "Producto nuevo y listo para despacho"
+    ],
+    "descuento": null,
+    "precio_oferta": null
+  },
+  {
+    "id": 5,
+    "nombre": "Alicate universal 8\"",
+    "categoria": "Herramientas manuales",
+    "precio": 6490,
+    "stock": 20,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaIIdv5De7ZBKqpjTKV47UtLEoZGLa2jJBtdERimpd4Q&s=10",
+    "caracteristicas": [
+      "Categoría: Herramientas manuales",
+      "Código de producto: #5",
+      "Producto nuevo y listo para despacho"
+    ],
+    "descuento": null,
+    "precio_oferta": null
+  },
+  {
+    "id": 6,
+    "nombre": "Llave inglesa ajustable 10\"",
+    "categoria": "Herramientas manuales",
+    "precio": 8990,
+    "stock": 12,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa6gLleyaK61BIeFSrr6tSdjZU8GlZjbbq60FoL1qCOQ&s=10",
+    "caracteristicas": [
+      "Categoría: Herramientas manuales",
+      "Código de producto: #6",
+      "Producto nuevo y listo para despacho"
+    ],
+    "descuento": null,
+    "precio_oferta": null
+  },
+  {
+    "id": 7,
+    "nombre": "Sierra de mano 20\"",
+    "categoria": "Herramientas manuales",
+    "precio": 9990,
+    "stock": 5,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp0w2_bOJZE8sXeLrNb8b4uTRzEOZmBZGUCoAudPAQOA&s",
+    "caracteristicas": [
+      "Categoría: Herramientas manuales",
+      "Código de producto: #7",
+      "Producto nuevo y listo para despacho"
+    ],
+    "descuento": null,
+    "precio_oferta": null
+  },
+  {
+    "id": 8,
+    "nombre": "Cinta metrica 5m",
+    "categoria": "Medición",
+    "precio": 3490,
+    "stock": 50,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDi016uCJTULmoGfkSGg5cqMJ3bldfvYsze5W-3bIJ8g&s=10",
+    "caracteristicas": [
+      "Categoría: Medición",
+      "Código de producto: #8",
+      "Producto nuevo y listo para despacho"
+    ],
+    "descuento": null,
+    "precio_oferta": null
+  },
+  {
+    "id": 9,
+    "nombre": "Nivel de burbuja 60cm",
+    "categoria": "Medición",
+    "precio": 6990,
+    "stock": 18,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmVYq4phAbM5eRFsex_9lJPfJ6NwTIbVQSNEV5Mlhbeg&s=10",
+    "caracteristicas": [
+      "Categoría: Medición",
+      "Código de producto: #9",
+      "Producto nuevo y listo para despacho"
+    ],
+    "descuento": null,
+    "precio_oferta": null
+  },
+  {
+    "id": 10,
+    "nombre": "Calibrador pie de metro digital",
+    "categoria": "Medición",
+    "precio": 12990,
+    "stock": 6,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSorA8FRRpRMDlcn3OxXvzn33eoD3MLJDL-__qiFgQ0A&s=10",
+    "caracteristicas": [
+      "Categoría: Medición",
+      "Código de producto: #10",
+      "Producto nuevo y listo para despacho"
+    ],
+    "descuento": null,
+    "precio_oferta": null
+  },
+  {
+    "id": 11,
+    "nombre": "Taladro percutor 650W",
+    "categoria": "Herramientas eléctricas",
+    "precio": 39990,
+    "stock": 8,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKMM-Fvg8lbwN1j95Ywt5be5MCWGoC_eHnVZgrgNdYlA&s=10",
+    "caracteristicas": [
+      "Categoría: Herramientas electricas",
+      "Código de producto: #11",
+      "Producto nuevo y listo para despacho"
+    ],
+    "descuento": 15,
+    "precio_oferta": 33992
+  },
+  {
+    "id": 12,
+    "nombre": "Esmeril angular 4 1/2\"",
+    "categoria": "Herramientas eléctricas",
+    "precio": 34990,
+    "stock": 10,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmIYJ_VmQNIAXz8atk0IbMDQa1Y13x1MSiN4j28TK8EA&s=10",
+    "caracteristicas": [
+      "Categoría: Herramientas electricas",
+      "Código de producto: #12",
+      "Producto nuevo y listo para despacho"
+    ],
+    "descuento": 10,
+    "precio_oferta": 31491
+  },
+  {
+    "id": 13,
+    "nombre": "Sierra circular 1200W",
+    "categoria": "Herramientas eléctricas",
+    "precio": 54990,
+    "stock": 0,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTryaF3mFr6m3bH1PfvNe_nNjEEcXb6sGKcdEd_tgn2rQ&s=10",
+    "caracteristicas": [
+      "Categoría: Herramientas electricas",
+      "Código de producto: #13",
+      "Producto nuevo y listo para despacho"
+    ],
+    "descuento": null,
+    "precio_oferta": null
+  },
+  {
+    "id": 14,
+    "nombre": "Atornillador inalhambrico 12V",
+    "categoria": "Herramientas eléctricas",
+    "precio": 29990,
+    "stock": 10,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_YETOjKVvv0LHd4WI4EZDrYk002HqmcduFRUgBvIEug&s=10",
+    "caracteristicas": [
+      "Categoría: Herramientas electricas",
+      "Código de producto: #14",
+      "Producto nuevo y listo para despacho"
+    ],
+    "descuento": 20,
+    "precio_oferta": 23992
+  },
+  {
+    "id": 15,
+    "nombre": "Lijadora orbital 200W",
+    "categoria": "Herramientas eléctricas",
+    "precio": 27990,
+    "stock": 4,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkeeZL7aoNL4-6Dm-0bbChAwAfxCB95hzFu4LSSwbAyQ&s=10",
+    "caracteristicas": [
+      "Categoría: Herramientas electricas",
+      "Código de producto: #15",
+      "Producto nuevo y listo para despacho"
+    ],
+    "descuento": 25,
+    "precio_oferta": 20992
+  },
+  {
+    "id": 16,
+    "nombre": "Tornillo autorroscante 1/2\" (caja 100u)",
+    "categoria": "Fijaciones",
+    "precio": 2990,
+    "stock": 60,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK6G_Aj-2oTnBtqPqo5KNdcnJ6qmSQFno0SAJKFHkNeg&s=10",
+    "caracteristicas": [
+      "Categoría: Fijaciones",
+      "Código de producto: #16",
+      "Producto nuevo y listo para despacho"
+    ],
+    "descuento": null,
+    "precio_oferta": null
+  },
+  {
+    "id": 17,
+    "nombre": "Clavo galvanizado 2\" (kilo)",
+    "categoria": "Fijaciones",
+    "precio": 1990,
+    "stock": 45,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6XeBbOdpUItvLIMcxulHU6tALEa1QldCESaiCe94qUg&s=10",
+    "caracteristicas": [
+      "Categoría: Fijaciones",
+      "Código de producto: #17",
+      "Producto nuevo y listo para despacho"
+    ],
+    "descuento": null,
+    "precio_oferta": null
+  },
+  {
+    "id": 18,
+    "nombre": "Tarugo plastico NÂ°8 (bolsa 50u)",
+    "categoria": "Fijaciones",
+    "precio": 1590,
+    "stock": 55,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR86Q0sO0hJrpZJLBHtJ-6dsO8SotdNtgvCcgwud-CLBg&s=10",
+    "caracteristicas": [
+      "Categoría: Fijaciones",
+      "Código de producto: #18",
+      "Producto nuevo y listo para despacho"
+    ],
+    "descuento": null,
+    "precio_oferta": null
+  },
+  {
+    "id": 19,
+    "nombre": "Perno hexagonal 1/4 x 2\" (caja 50u)",
+    "categoria": "Fijaciones",
+    "precio": 3990,
+    "stock": 22,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB7o9nSjao_VHK4UCQ4BUZgmiPpWLi-2MsNtCPOy1BMg&s=10",
+    "caracteristicas": [
+      "Categoría: Fijaciones",
+      "Código de producto: #19",
+      "Producto nuevo y listo para despacho"
+    ],
+    "descuento": null,
+    "precio_oferta": null
+  },
+  {
+    "id": 20,
+    "nombre": "Tuerca hexagonal 1/4\" (caja 100u)",
+    "categoria": "Fijaciones",
+    "precio": 2490,
+    "stock": 30,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmNjzZq1x3RvxPxdo-qj1D3Hdlqc0wQsVuiKBl4ODvrQ&s=10",
+    "caracteristicas": [
+      "Categoría: Fijaciones",
+      "Código de producto: #20",
+      "Producto nuevo y listo para despacho"
+    ],
+    "descuento": null,
+    "precio_oferta": null
+  },
+  {
+    "id": 21,
+    "nombre": "Pintura Latex blanco 1 galón",
+    "categoria": "Pinturas",
+    "precio": 14990,
+    "stock": 14,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQllFZKsQZ3StbIVBjA5A7ayHQhZpmYgRwcU9dU0ThCog&s=10",
+    "caracteristicas": [
+      "Categoría: Pinturas",
+      "Código de producto: #21",
+      "Producto nuevo y listo para despacho"
+    ],
+    "descuento": null,
+    "precio_oferta": null
+  },
+  {
+    "id": 22,
+    "nombre": "Esmalte sintético negro 1/4 galón",
+    "categoria": "Pinturas",
+    "precio": 6990,
+    "stock": 9,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK9co8xFbcKvr9zEabYFNRNTwX_awux0hR3muY0d4Tkg&s=10",
+    "caracteristicas": [
+      "Categoría: Pinturas",
+      "Código de producto: #22",
+      "Producto nuevo y listo para despacho"
+    ],
+    "descuento": null,
+    "precio_oferta": null
+  },
+  {
+    "id": 23,
+    "nombre": "Rodillo para pintura 9\"",
+    "categoria": "Pinturas",
+    "precio": 3490,
+    "stock": 26,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRay2x4mXEgoW6VmnPqUlr5idcbuEBt3hUjy32IqX3O_Q&s=10",
+    "caracteristicas": [
+      "Categoría: Pinturas",
+      "Código de producto: #23",
+      "Producto nuevo y listo para despacho"
+    ],
+    "descuento": null,
+    "precio_oferta": null
+  },
+  {
+    "id": 24,
+    "nombre": "Brocha 2\"",
+    "categoria": "Pinturas",
+    "precio": 1490,
+    "stock": 0,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlr-gi_SNTHdmRSeD46QlL8tPwDzTAfJZrLKk8V8Wj7A&s=10",
+    "caracteristicas": [
+      "Categoría: Pinturas",
+      "Código de producto: #24",
+      "Producto nuevo y listo para despacho"
+    ],
+    "descuento": null,
+    "precio_oferta": null
+  },
+  {
+    "id": 25,
+    "nombre": "Cinta de enmascarar 24mm",
+    "categoria": "Pinturas",
+    "precio": 1290,
+    "stock": 42,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCmcBo3mKmeEXWUCDIa_3PiS0wfaAx1DzF2nDf-kXrDA&s=10",
+    "caracteristicas": [
+      "Categoría: Pinturas",
+      "Código de producto: #25",
+      "Producto nuevo y listo para despacho"
+    ],
+    "descuento": null,
+    "precio_oferta": null
+  },
+  {
+    "id": 26,
+    "nombre": "Cable electrico 2.5mm (metro)",
+    "categoria": "Electricidad",
+    "precio": 590,
+    "stock": 200,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQC4lp_FesUgOxSmH-OPU5qJS868V-yOMWxD1IBlLgLJg&s=10",
+    "caracteristicas": [
+      "Categoría: Electricidad",
+      "Código de producto: #26",
+      "Producto nuevo y listo para despacho"
+    ],
+    "descuento": null,
+    "precio_oferta": null
+  },
+  {
+    "id": 27,
+    "nombre": "Enchufe hembra doble",
+    "categoria": "Electricidad",
+    "precio": 2990,
+    "stock": 17,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCNI6qG0wHwE3I_xqga9HvEn6s7_8fyw_jKr5vuSyzew&s=10",
+    "caracteristicas": [
+      "Categoría: Electricidad",
+      "Código de producto: #27",
+      "Producto nuevo y listo para despacho"
+    ],
+    "descuento": null,
+    "precio_oferta": null
+  },
+  {
+    "id": 28,
+    "nombre": "Interruptor simple",
+    "categoria": "Electricidad",
+    "precio": 1990,
+    "stock": 24,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHioISvC4gVA7FAAyHxwJQ-jLHpxpcgSKbNPkWlEjuyA&s=10",
+    "caracteristicas": [
+      "Categoría: Electricidad",
+      "Código de producto: #28",
+      "Producto nuevo y listo para despacho"
+    ],
+    "descuento": null,
+    "precio_oferta": null
+  },
+  {
+    "id": 29,
+    "nombre": "Ampolleta LED 9W",
+    "categoria": "Electricidad",
+    "precio": 2490,
+    "stock": 33,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxF_HIP62vsuQFdJPeofZoY9Jr3VEPIXuc2GSNzXY4Ew&s=10",
+    "caracteristicas": [
+      "Categoría: Electricidad",
+      "Código de producto: #29",
+      "Producto nuevo y listo para despacho"
+    ],
+    "descuento": null,
+    "precio_oferta": null
+  },
+  {
+    "id": 30,
+    "nombre": "Extensión electrica 5m",
+    "categoria": "Electricidad",
+    "precio": 7990,
+    "stock": 0,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaF4pDVJLWGVb_GRnwk5VHZEHaHArQImqVd74S98pXKA&s=10",
+    "caracteristicas": [
+      "Categoría: Electricidad",
+      "Código de producto: #30",
+      "Producto nuevo y listo para despacho"
+    ],
+    "descuento": null,
+    "precio_oferta": null
+  },
+  {
+    "id": 31,
+    "nombre": "Llave de paso 1/2\"",
+    "categoria": "Gasfitería",
+    "precio": 4990,
+    "stock": 11,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScze1eWAlUslMaxhiOS6yZeYusYJQv2uJoeiaM4bzQnw&s=10",
+    "caracteristicas": [
+      "Categoría: Gasfitería",
+      "Código de producto: #31",
+      "Producto nuevo y listo para despacho"
+    ],
+    "descuento": null,
+    "precio_oferta": null
+  },
+  {
+    "id": 32,
+    "nombre": "Tubo PVC 1/2\" (3 m)",
+    "categoria": "Gasfitería",
+    "precio": 3990,
+    "stock": 19,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPfTtYQWIshbkVPSBVYlLMdvNmXNBbfg4qmGC2JOFxHA&s=10",
+    "caracteristicas": [
+      "Categoría: Gasfitería",
+      "Código de producto: #32",
+      "Producto nuevo y listo para despacho"
+    ],
+    "descuento": null,
+    "precio_oferta": null
+  },
+  {
+    "id": 33,
+    "nombre": "Codo PVC 90Â° 1/2\"",
+    "categoria": "Gasfitería",
+    "precio": 490,
+    "stock": 80,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSbMtXmyc_n5REjTle905irbMBLsh_CEnPKwkoTAf4lQ&s=10",
+    "caracteristicas": [
+      "Categoría: Gasfitería",
+      "Código de producto: #33",
+      "Producto nuevo y listo para despacho"
+    ],
+    "descuento": null,
+    "precio_oferta": null
+  },
+  {
+    "id": 34,
+    "nombre": "Cinta teflón",
+    "categoria": "Gasfitería",
+    "precio": 690,
+    "stock": 60,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-OlXY_Lsl53VXfEBXZwflDO6VALmiX0r4gnWmTreR2w&s=10",
+    "caracteristicas": [
+      "Categoría: Gasfitería",
+      "Código de producto: #34",
+      "Producto nuevo y listo para despacho"
+    ],
+    "descuento": null,
+    "precio_oferta": null
+  },
+  {
+    "id": 35,
+    "nombre": "Sifón lavaplatos",
+    "categoria": "Gasfitería",
+    "precio": 5990,
+    "stock": 7,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3tOcv_KJjiOMUmPNo39iY88IrgiO6YrCQpSfDiwqviQ&s=10",
+    "caracteristicas": [
+      "Categoría: Gasfitería",
+      "Código de producto: #35",
+      "Producto nuevo y listo para despacho"
+    ],
+    "descuento": null,
+    "precio_oferta": null
+  },
+  {
+    "id": 36,
+    "nombre": "Guantes de seguridad cuero",
+    "categoria": "Seguridad",
+    "precio": 3990,
+    "stock": 28,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi1RKqKOkowbQ6pxmmUb4b_aDofmJ17wtNe-x6Q2FUDw&s=10",
+    "caracteristicas": [
+      "Categoría: Seguridad",
+      "Código de producto: #36",
+      "Producto nuevo y listo para despacho"
+    ],
+    "descuento": null,
+    "precio_oferta": null
+  },
+  {
+    "id": 37,
+    "nombre": "Lentes de proteccion",
+    "categoria": "Seguridad",
+    "precio": 2490,
+    "stock": 35,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdnd6Fd6JdBa8Y14wokbD5RDgqbOurivqv6ig3FLKq1A&s=10",
+    "caracteristicas": [
+      "Categoría: Seguridad",
+      "Código de producto: #37",
+      "Producto nuevo y listo para despacho"
+    ],
+    "descuento": null,
+    "precio_oferta": null
+  },
+  {
+    "id": 38,
+    "nombre": "Mascarilla antipolvo (caja 10u)",
+    "categoria": "Seguridad",
+    "precio": 4490,
+    "stock": 0,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVUuSGh4Y2TwNUFQGF3k2dfQSkcPst_qTbKNSZQGnQgQ&s=10",
+    "caracteristicas": [
+      "Categoría: Seguridad",
+      "Código de producto: #38",
+      "Producto nuevo y listo para despacho"
+    ],
+    "descuento": null,
+    "precio_oferta": null
+  },
+  {
+    "id": 39,
+    "nombre": "Casco de seguridad",
+    "categoria": "Seguridad",
+    "precio": 8990,
+    "stock": 6,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtbWhxQIF2iUIe43CfNn8jyk31p7huzDQFXIw6LEWIvQ&s=10",
+    "caracteristicas": [
+      "Categoría: Seguridad",
+      "Código de producto: #39",
+      "Producto nuevo y listo para despacho"
+    ],
+    "descuento": null,
+    "precio_oferta": null
+  },
+  {
+    "id": 40,
+    "nombre": "Chaleco reflectante",
+    "categoria": "Seguridad",
+    "precio": 3990,
+    "stock": 13,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTA2No_To9DdqEIWnBo8xtNJRfnhyWrXdFjYNgLX0r4Qg&s=10",
+    "caracteristicas": [
+      "Categoría: Seguridad",
+      "Código de producto: #40",
+      "Producto nuevo y listo para despacho"
+    ],
+    "descuento": null,
+    "precio_oferta": null
+  }
+]

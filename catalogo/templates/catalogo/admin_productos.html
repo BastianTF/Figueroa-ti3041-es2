@@ -1,0 +1,26 @@
+{% extends "catalogo/base.html" %}
+{% load catalogo_tags %}
+{% block titulo %}Inventario{% endblock %}
+{% block contenido %}
+<div class="admin-page">
+    <div class="admin-heading">
+        <div><span class="kicker">Inventario</span><h1>Productos de la ferretería</h1></div>
+        <div class="admin-actions"><a class="btn btn-secondary" href="{% url 'catalogo:admin_panel' %}">Ver ventas</a><a class="btn btn-primary" href="{% url 'catalogo:admin_producto_nuevo' %}">+ Agregar producto</a></div>
+    </div>
+    <div class="admin-table-wrap">
+        <table class="admin-table">
+            <thead><tr><th>Imagen</th><th>Producto</th><th>Categoría</th><th>Precio</th><th>Stock</th><th>Acciones</th></tr></thead>
+            <tbody>
+            {% for producto in productos %}
+                <tr>
+                    <td><img class="admin-product-image" src="{{ producto.imagen }}" alt="{{ producto.nombre }}"></td>
+                    <td>{{ producto.nombre }}</td><td>{{ producto.categoria }}</td><td>${{ producto.precio|precio }}</td>
+                    <td><span class="stock {% if producto.stock == 0 %}stock--red{% endif %}">{{ producto.stock }}</span></td>
+                    <td class="admin-row-actions"><a class="ver-link" href="{% url 'catalogo:admin_producto_editar' producto.id %}">Editar / stock</a><form method="post" action="{% url 'catalogo:admin_producto_eliminar' producto.id %}">{% csrf_token %}<button class="danger-link" type="submit">Eliminar</button></form></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

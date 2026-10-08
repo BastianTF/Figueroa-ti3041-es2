@@ -1,0 +1,70 @@
+{% extends "catalogo/base.html" %}
+{% block titulo %}Ferretería El Tornillo | Inicio{% endblock %}
+{% block contenido %}
+<div class="portada">
+    <div class="promo-bar">
+        <span class="promo-tag">ENVÍO</span>
+        <span class="promo-text">Por compras sobre $49.990 en Ferretería El Tornillo</span>
+        <span class="promo-tag promo-tag--light">APP</span>
+    </div>
+
+    <section class="hero">
+        <div class="hero-copy">
+            <span class="eyebrow">Especial del mes</span>
+            <h1>Todo para<br><span>tu taller y hogar</span></h1>
+            <p>Herramientas, materiales y soluciones para proyectos de construcción, reparación y mantenimiento.</p>
+            <div class="hero-actions">
+                <a class="btn btn-primary" href="{% url 'catalogo:catalogo' %}">Ver catálogo</a>
+                <a class="btn btn-secondary" href="{% url 'catalogo:ofertas' %}">Ofertas</a>
+            </div>
+            <div class="stats">
+                <div>
+                    <strong>{{ total_productos }}</strong>
+                    <span>productos</span>
+                </div>
+                <div>
+                    <strong>{{ total_con_stock }}</strong>
+                    <span>con stock</span>
+                </div>
+                <div>
+                    <strong>{{ total_sin_stock }}</strong>
+                    <span>sin stock</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-spotlight">
+            <div class="spotlight-card">
+                <div class="spotlight-badge">OFERTA</div>
+                <h3>Taladro percutor 650W</h3>
+                <p>Potencia, precisión y calidad para cada trabajo.</p>
+                <div class="spotlight-price">
+                    <span class="old-price">$45.990</span>
+                    <strong>$39.990</strong>
+                </div>
+                <a href="{% url 'catalogo:detalle' 11 %}">Ver detalle</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="promo-grid" id="ofertas">
+        <article class="promo-card promo-card--orange">
+                <span>Ofertas</span>
+                <h3><a class="promo-link" href="{% url 'catalogo:ofertas' %}">Herramientas para tu taller</a></h3>
+        </article>
+        <article class="promo-card promo-card--yellow">
+            <span>Liquidación</span>
+            <h3>Hasta 70% dto.</h3>
+        </article>
+        <article class="promo-card promo-card--white">
+            <span>Recomendado</span>
+            <h3>Calefacción y calefactores</h3>
+        </article>
+        <article class="promo-card promo-card--dark">
+            <span>Promoción</span>
+            <h3>cotiza tus productos</h3>
+        </article>
+    </section>
+
+</div>
+{% endblock %}

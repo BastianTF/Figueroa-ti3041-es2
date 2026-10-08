@@ -1,0 +1,42 @@
+{% extends "catalogo/base.html" %}
+{% load catalogo_tags %}
+{% block titulo %}Administración{% endblock %}
+{% block contenido %}
+<div class="admin-page">
+    <div class="admin-heading">
+        <div>
+            <span class="kicker">Panel privado</span>
+            <h1>Administración de la ferretería</h1>
+        </div>
+        <a class="btn btn-primary" href="{% url 'catalogo:admin_producto_nuevo' %}">+ Agregar producto</a>
+    </div>
+
+    <div class="admin-stats">
+        <div><strong>{{ total_productos }}</strong><span>Productos</span></div>
+        <div><strong>{{ stock_total }}</strong><span>Unidades en stock</span></div>
+        <div><strong>{{ ventas|length }}</strong><span>Ventas registradas</span></div>
+        <div><strong>${{ ventas_total|precio }}</strong><span>Ingresos acumulados</span></div>
+    </div>
+
+    <div class="admin-section-heading">
+        <h2>Ventas recientes</h2>
+        <a class="ver-link" href="{% url 'catalogo:admin_productos' %}">Gestionar inventario</a>
+    </div>
+    <div class="admin-table-wrap">
+        <table class="admin-table">
+            <thead><tr><th>Venta</th><th>Cliente</th><th>Fecha</th><th>Productos</th><th>Total</th></tr></thead>
+            <tbody>
+            {% for venta in ventas reversed %}
+                <tr>
+                    <td>#{{ venta.id }}</td><td>{{ venta.usuario }}</td><td>{{ venta.fecha }}</td>
+                    <td>{% for item in venta.productos %}{{ item.nombre }} ({{ item.cantidad }}){% if not forloop.last %}, {% endif %}{% endfor %}</td>
+                    <td>${{ venta.total|precio }}</td>
+                </tr>
+            {% empty %}
+                <tr><td colspan="5">Todavía no hay ventas registradas.</td></tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
