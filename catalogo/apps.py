@@ -1,5 +1,8 @@
-from django.apps import AppConfig
+from django.contrib import admin
+from .models import Producto
 
-
-class CatalogoConfig(AppConfig):
-    name = 'catalogo'
+@admin.register(Producto)
+class ProductoAdmin(admin.ModelAdmin):
+    list_display = ('nombre', 'categoria', 'precio', 'stock')
+    search_fields = ('nombre', 'categoria')
+    list_filter = ('categoria',)
