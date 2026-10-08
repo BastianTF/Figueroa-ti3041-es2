@@ -1,4 +1,4 @@
-from .views import cargar_productos
+from .models import Producto
 
 
 ICONOS_CATEGORIA = {
@@ -15,7 +15,7 @@ ICONOS_CATEGORIA = {
 
 def categorias_contexto(request):
     categorias = []
-    nombres = sorted({producto.get("categoria") for producto in cargar_productos() if producto.get("categoria")})
+    nombres = Producto.objects.order_by("categoria").values_list("categoria", flat=True).distinct()
     for nombre in nombres:
         categorias.append({
             "nombre": nombre,

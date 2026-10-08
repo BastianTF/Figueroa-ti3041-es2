@@ -5,6 +5,10 @@ class Producto(models.Model):
     categoria = models.CharField(max_length=50)
     precio = models.IntegerField()
     stock = models.IntegerField()
+    imagen = models.URLField(max_length=500, blank=True)
+    caracteristicas = models.JSONField(default=list, blank=True)
+    descuento = models.PositiveSmallIntegerField(null=True, blank=True)
+    precio_oferta = models.PositiveIntegerField(null=True, blank=True)
 
     def __str__(self):
         return f"{self.nombre} - ${self.precio}"

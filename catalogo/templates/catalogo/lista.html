@@ -1,4 +1,5 @@
 {% extends "catalogo/base.html" %}
+{% load catalogo_tags %}
 {% block titulo %}Ferretería El Tornillo | Inicio{% endblock %}
 {% block contenido %}
 <div class="portada">
@@ -34,16 +35,65 @@
         </div>
 
         <div class="hero-spotlight">
+            {% if producto_destacado %}
             <div class="spotlight-card">
                 <div class="spotlight-badge">OFERTA</div>
-                <h3>Taladro percutor 650W</h3>
-                <p>Potencia, precisión y calidad para cada trabajo.</p>
+                <h3>{{ producto_destacado.nombre }}</h3>
+                <p>{{ producto_destacado.categoria }}</p>
                 <div class="spotlight-price">
-                    <span class="old-price">$45.990</span>
-                    <strong>$39.990</strong>
+                    <span class="old-price">${{ producto_destacado.precio|precio }}</span>
+                    <strong>${{ producto_destacado.precio_oferta|precio }}</strong>
                 </div>
-                <a href="{% url 'catalogo:detalle' 11 %}">Ver detalle</a>
+                <a href="{% url 'catalogo:detalle' producto_destacado.id %}">Ver detalle</a>
             </div>
+            {% endif %}
+        </div>
+    </section>
+
+    <section class="catalogo-page">
+        <div class="catalogo-header-page">
+            <div>
+                <span class="kicker">Inventario disponible</span>
+                <h2>Todos nuestros productos</h2>
+            </div>
+            <a class="btn btn-secondary" href="{% url 'catalogo:catalogo' %}">Filtrar catálogo</a>
+        </div>
+        <div class="catalog-grid catalog-grid--full">
+            {% for producto in productos %}
+            <article class="producto-card {% if producto.stock == 0 %}producto-card--sin-stock{% endif %}">
+                <img class="producto-imagen" src="{{ producto.imagen }}" alt="{{ producto.nombre }}">
+                <div class="producto-badge">
+                    {% if producto.stock == 0 %}
+                        Sin stock
+                    {% elif producto.stock < 10 %}
+                        Últimas unidades
+                    {% else %}
+                        En stock
+                    {% endif %}
+                </div>
+                <h3>{{ producto.nombre }}</h3>
+                <p class="categoria">{{ producto.categoria }}</p>
+                <p class="precio">${{ producto.precio|precio }}</p>
+                <div class="stock-row">
+                    {% if producto.stock == 0 %}
+                        <span class="stock stock--red">Sin stock</span>
+                    {% else %}
+                        <span class="stock">{{ producto.stock }} disponibles</span>
+                    {% endif %}
+                </div>
+                <div class="producto-card-actions">
+                    <a class="ver-link" href="{% url 'catalogo:detalle' producto.id %}">Ver detalle</a>
+                    <form method="post" action="{% url 'catalogo:agregar_carrito' producto.id %}">
+                        {% csrf_token %}
+                        <button class="btn btn-primary btn-cart" type="submit" {% if producto.stock == 0 %}disabled{% endif %}>
+                            {% if producto.stock == 0 %}Agotado{% else %}Añadir al carro{% endif %}
+                        </button>
+                    </form>
+                </div>
+            </article>
+            {% empty %}
+                <p>Aún no hay productos en el inventario.</p>
+            {% endfor %}
         </div>
     </section>
 
